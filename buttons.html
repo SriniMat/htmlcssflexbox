@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> My First html CSS Course</title>
+    <!--
+      rgb - Red : Green : Blue (0 --- 255)
+      Button           <--- Element Name
+      subscribe-button <--- Class Lable , class lable can be referrend with '.','
+    
+      Margin           <--- Space in CSS , paragraphs come with default top and bottom margin
+    
+      hover            <--- adds psudo-pass...which implies , only those attribute values are overridden
+      Active           <--- active styles are applied, when you click over the element.
+    
+      Opacity          <--- used to fade out an element ( values 0 - 1) where 1 is normal value.
+    
+      box-shadow       <--- (0,0,0,0) ===> (to-right horizontal, to-down vertical, percentage-blurred,color of the shadow (can be replaced with rgba))
+    
+      rgba             <--- rgb a stands for attribute (r,b,g, opacity 'how dark or faded the color to be '0 to 1' value')
+    
+      transition       <--- to make the change happen smoothly (back-ground color change, shadow etc...)
+                            this property takes two parameters (what you want to transition, how long) 
+                            transition: opacity 1s;
+                            we can have multiple property transitions seperated by coma ','
+                            transition: background-color 1s, color 1s;
+    
+      Development tools:
+    
+      CSS Box Model        <--- it shows how much Margin, Border and Padding an element (button, etc) has
+    
+      width                <--- in a paragraph decides the size of the line
+      line-height          <--- decides the height of the line, which can be used to maintain the spacing between lines
+    
+      html entities        <--- used to have some special characters 
+    
+      Paragraph            <--- Once the Paragraph styles are applied, the specific class styles are applies and 
+                                overrides the Paragraph styles. Paragraphs by default are Block Elements (they occupy entire row)
+                            <--- Roboto is Google Font, Font Family provided the backup fonts in case the 
+                                 Google font is not avaible for any reason, the next set of font styles are used.
+    
+      Text Elements        <--- They exists within the text statement, like <strong></strong> <u></u> <span></span>, etc..
+
+      void Elements - link <--- link is one of the void element of html that does not need closing tag
+                                When you are linking stylesheets using rel and href, we NEED NOT USE <style></style>  html tag
+
+      rel                  <--- this rel attribute specifies the relation between the current document and the linked Document / Resource.
+                                it has dirrent values like..., alternate, stylesheet, icon, next, prev etc...
+
+      Basic HTML Elements
+     1) Block Element (occupy entire line)
+     2) Inline Block Element (they take only the amount of space they need of the entire line. Example image, text elements)
+     3) Inline Element (they appear with in a line. Example <strong><\strong> <u><\u>)
+
+     Windows snippet tool : windows + shift + s, then select rectangle...etc..
+
+     Grid                  <--- Grid process helps fixing the gaps / spaces between the vertical and Horizontal pannels etc...
+                                problems involved inline block - DISPLAY
+                                Grids automatically adjust the width of the blocks within the grid.
+                                if we add more columns that that defined in the Grid layout, the extra columns roll to the next line
+                                -- 1 fr, implies the size of the column with remaining free space, after the defined columns size
+                                -- if we have more that 1 fr defined in the columns of the grid, they take equal portions;
+                                if we want the free space to be of different ratios...we can give it as 1fr, 2fr (1/3, 2/3 of the free spaces)
+
+      Flex                <--- to have flexible width (increases and decreases with page size), 
+                               we define  flex = 1 (for blexbox; i.e display=flex); instead of width = 20px
+                               To stop the width of the flex element at some point, we define   max-width = 300px ,for flex element
+
+                               flex=1 <--- is same as 1fr in grid (that occupies the remaining space)
+
+      grid vs flexbox     <--- 1) similarity : 1fr ==== same as flex = 1 in Flexbox
+                          <----2) Differences; Gird is rigid...where we define the size of the element...and the element width 
+                                  is fixed as defined  in grid-template-columns: 1fr 1fr;  
+                                  Where as in flexbox,the width of the elements is not regid and they take their width along with them like 
+                                  flex = 1 or flex = 2 or even width = 100px etc...
+      justify-contenet = space-between <---- what this does is , adjust the space between the flex elements when occupying the entire page
+      align-item : start / stretch
+
+      <input type="">     <--- input types could be text, checkbox....
+
+      position : fixed / absolute
+                          <--- Elements with Position: fixed are on the Browser WINDOW
+                          <--- Elements with Position: Absolute are on the Web Page 
+                               (mostly, as long as these elements are are not under Position = Fixed (implied Browser WINDOW))
+
+
+
+
+
+
+
+
+
+
+      By Default, if a DIV2 is under another DIV1, DIV2 will appear in front and DIV1 will appear back /below DIV2.
+      Also, elements with position STATIC, will appear on the Back (not front)
+      z-index             <---- this allows us to position a DIV , overriding its sequence in the html;
+                                elements with higher z-index come first than that of the elements with low z-index
+                                the default z-index is zero (elements on the web page, have default z-index = 0)
+
+      Position : absolute, element when placed within an position:  Fixed element; 
+                 then that elements behaves position relative to the element with position : fixed; 
+                 rather than relative to the position on the WebPage
+      
+      Position: relative  <---- if you define another element (with position:absolute) within this element; 
+                                then the coordinates are relative to, this element with position:relateive, 
+                                rather than relative to the Webpage.
+
+      @media (media Query) is used to fit no. of columns per page size <600 , > 601  & <999 , > 1000
+
+      shortcuts           <--- padding (instead of padding left,right etc..), margin (instead of margin left,right etc..)
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/buttons.css">
+    </head>
+    
+    <body>
+      <button class="subscribe-button">SUBSCRIBE</button>
+      <button class="join-button">JOIN my Channel</button>
+      <button class="tweet-button">Tweet</button>
+      
+      <p class="wr-title">
+        World Record: Jasprit Bumrah rips apart Stuart Broad in 35-run in an over
+      </p>
+      
+      <p class="wr-title-footer">
+        24 minutes ago — Comprehensive, up-to-date news coverage &middot; 	&lsquo; Aggregated from sources all over the world by Google News. &rsquo;
+      </p>
+      
+      <p class="wr-title-footer">
+        by Srinivas Matur &reg;
+      </p>
+      
+      <p class="shop-text">
+        Shop early for the best selection of holidays. <span class="span-shop-text">Shop now &gt; &quest;</span>
+      </p>
+    </body>
+</html>
+
+
